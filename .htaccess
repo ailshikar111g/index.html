@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# إذا الرابط HTTPS، حوّل إلى HTTP
+RewriteCond %{HTTPS} on
+RewriteRule ^(.*)$ http://%{HTTP_HOST}/$1 [R=301,L]
+
+# أو لتطبيقه على ملف محدد فقط
+# RewriteCond %{HTTPS} on
+# RewriteRule ^اسم_الملف\.html$ http://%{HTTP_HOST}/اسم_الملف.html [R=301,L]
